@@ -5,7 +5,7 @@ const server = http.createServer((req, res) => {
   res.setHeader('Content-Type', 'text/plain;charset=utf-8');
   res.setHeader('Set-Cookie', `last_access=${now};`);
   const last_access_time = req.headers.cookie ? parseInt(req.headers.cookie.split('last_access=')[1]) : now;
-  res.end(new Date(last_access_time).toString());
+  res.end(new Date(last_access_time).toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' }));
 });
 const port = 8000;
 server.listen(port, () => {
