@@ -1,5 +1,5 @@
 'use strict';
-const http = require('http');
+const http = require('node:http');
 const server = http.createServer((req, res) => {
   const now = Date.now();
   res.setHeader('Content-Type', 'text/plain;charset=utf-8');
